@@ -5,7 +5,4 @@ This is a project to create a tangram man using HTML and CSS. The tangram man is
 
 In this project, we have created a tangram man using HTML and CSS, and we have used CSS animations to create different poses for the tangram man. 
 -- 
-Standing
-Walking
-Running
-Sitting
+Standing, Walking, Running, Sitting
