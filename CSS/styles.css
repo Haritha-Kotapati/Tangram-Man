@@ -1,0 +1,410 @@
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* DEFINED COLOR FOR THE SHAPES */
+.triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  transition: all 2s;
+}
+
+.triangle--pink {
+  border-left: 50px solid #d2696a;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
+.triangle--purple {
+  border-left: 50px solid #7e2b7c;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
+.triangle--turquoise {
+  border-left: 70px solid #189184;
+  border-top: 70px solid transparent;
+  border-bottom: 70px solid transparent;
+}
+
+.triangle--yellow {
+  border-left: 100px solid #FBC002;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+}
+
+.triangle--red {
+  border-left: 100px solid #b20000;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+}
+
+.square {
+  position: absolute;
+  transition: all 2s;
+}
+
+.square--orange {
+  background-color: #F48400;
+  width: 70px;
+  height: 70px;
+}
+
+.parallelogram {
+  position: absolute;
+  transition: all 2s;
+}
+
+.parallelogram--green {
+  background-color: #81b442;
+  width: 64px;
+  height: 70px;
+}
+
+/* COLUMNS FOR TANGRAM DISPLAY  & BUTTONS */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  gap: 10px;
+}
+
+.container {
+  align-items: center;
+  width: 70%;
+  height: 640px;
+  background-color: #3a3a3a;
+  float: left;
+  margin-right: 1%;
+  height: 100vh;
+  
+}
+
+.buttons {
+  padding: 20PX;
+  color: #FFF;
+  width: 29%;
+  height: 100vh;
+  background-color: #189184;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+.button {
+  color: #3a3a3a;
+  padding: 15px;
+  margin: 0 10%;
+  background-color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.8em;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.tangram {
+  align-items: stretch;
+  width: 60%;
+  padding: 10% 20%;
+  position: relative;
+  display: flex;
+}
+
+/* Animation wiggle on hover over the tangram */
+.tangram:hover {
+  animation: wiggle 2s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translateX(0)
+  }
+
+  25% {
+    transform: translateX(-20px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-text {
+  z-index: 1;
+  text-transform: uppercase;
+  background-image: linear-gradient(45deg,
+      #d2696a 0%,
+      #7e2b7c 15%,
+      #189184 35%,
+      #FBC002 50%,
+      #b20000 65%,
+      #F48400 80%,
+      #81b442 100%);
+      background-size: 200% auto;
+      color: #fff;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textclip 2s linear infinite;
+      display: inline-block;
+      font-size: 2em;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Basic  */
+.tangram--basic {
+  padding: 25%;
+}
+
+.tangram--basic .triangle--pink {
+  transform: translate(160px, -2px) rotate(180deg);
+}
+
+.tangram--basic .triangle--purple {
+  transform: translate(79px, 79px) rotate(270deg);
+}
+
+.tangram--basic .triangle--turquoise {
+  transform: translate(150px, 109px) rotate(45deg);
+}
+
+.tangram--basic .triangle--yellow {
+  transform: translate(0, 0);
+}
+
+.tangram--basic .triangle--red {
+  transform: translate(54px, -52px) rotate(90deg);
+}
+
+.tangram--basic .square--orange {
+  transform: translate(122px, 66px) rotate(45deg);
+}
+
+.tangram--basic .parallelogram--green {
+  transform: translate(45px, 146px) rotate(-45deg) skew(45deg);
+}
+
+
+/* HUMAN STANDING */
+.tangram--standing .triangle--pink {
+  transform: translate(235px, 420px) rotate(0deg);
+}
+
+.tangram--standing .triangle--purple {
+  transform: translate(95px, 445px) rotate(270deg);
+}
+
+.tangram--standing .triangle--turquoise {
+  transform: translate(170px, 320px) rotate(-45deg);
+}
+
+.tangram--standing .triangle--yellow {
+  transform: translate(160px, 150px) rotate(-45deg);
+}
+
+.tangram--standing .triangle--red {
+  transform: translate(85px, 225px) rotate(135deg);
+}
+
+.tangram--standing .square--orange {
+  transform: translate(145px, 125px) rotate(45deg);
+}
+
+.tangram--standing .parallelogram--green {
+  transform: translate(110px, 400px) rotate(45deg) skew(45deg);
+}
+
+
+/* HUMAN RUNNING */
+.tangram--running .triangle--pink {
+  transform: translate(125px, 420px) rotate(0deg);
+}
+
+.tangram--running .triangle--purple {
+  transform: translate(260px, 340px) rotate(-45deg);
+}
+
+.tangram--running .triangle--turquoise {
+  transform: translate(50px, 340px) rotate(180deg);
+}
+
+.tangram--running .triangle--yellow {
+  transform: translate(130px, 150px) rotate(-45deg);
+}
+
+.tangram--running .triangle--red {
+  transform: translate(110px, 280px) rotate(135deg);
+}
+
+.tangram--running .square--orange {
+  transform: translate(145px, 125px) rotate(45deg);
+}
+
+.tangram--running .parallelogram--green {
+  transform: translate(225px, 245px) rotate(90deg) skew(-45deg);
+}
+
+/* HUMAN WALKING */
+.tangram--walking .triangle--pink {
+  transform: translate(150px, 460px) rotate(45deg);
+}
+
+.tangram--walking .triangle--purple {
+  transform: translate(230px, 420px) rotate(0deg);
+}
+
+.tangram--walking .triangle--turquoise {
+  transform: translate(115px, 375px) rotate(-135deg);
+}
+
+.tangram--walking .triangle--yellow {
+  transform: translate(130px, 150px) rotate(-45deg);
+}
+
+.tangram--walking .triangle--red {
+  transform: translate(110px, 280px) rotate(135deg);
+}
+
+.tangram--walking .square--orange {
+  transform: translate(145px, 125px) rotate(45deg);
+}
+
+.tangram--walking .parallelogram--green {
+  transform: translate(225px, 245px) rotate(90deg) skew(-45deg);
+}
+
+/* HUMAN SITTING */
+.tangram--sitting .triangle--pink {
+  transform: translate(20px, 425px) rotate(90deg);
+}
+
+.tangram--sitting .triangle--purple {
+  transform: translate(290px, 240px) rotate(0deg);
+}
+
+.tangram--sitting .triangle--turquoise {
+  transform: translate(80px, 350px) rotate(45deg);
+}
+
+.tangram--sitting .triangle--yellow {
+  transform: translate(130px, 310px) rotate(135deg);
+}
+
+.tangram--sitting .triangle--red {
+  transform: translate(185px, 240px) rotate(180deg);
+}
+
+.tangram--sitting .square--orange {
+  transform: translate(250px, 150px) rotate(45deg);
+}
+
+.tangram--sitting .parallelogram--green {
+  transform: translate(280px, 340px) rotate(-45deg) skew(-45deg);
+}
+
+footer {
+  text-align: center;
+  /* background-color:var(--main-color);
+  color:var(--second-accent); */
+  padding: 0.8em;
+}
+
+#copyright {
+  font-size: 0.7em;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:768px) {
+  .buttons {
+    padding: 30px;
+  }
+
+  .button {
+    margin: 10px 15px;
+  }
+
+  .animate-text {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width:586px) {
+  .container {
+    width: 100%;
+    height: 80vh;
+  }
+
+  .tangram {
+    padding: 0;
+  }
+
+  .tangram--basic {
+    padding: 25%;
+  }
+
+  .animate-text {
+    font-size: 1.2em;
+  }
+
+  .buttons {
+    flex-direction: row;
+    height: 20vh;
+    display: table-cell;
+  }
+
+  .buttons h2 {
+    font-size: .8em;
+  }
+
+  button {
+    font-size: 0.5em;
+
+  }
+}
+
+@media screen and (max-width:480px) {}
+
+
+/* source refrenced and Inspired from the following example link given below */
+/* https://codepen.io/deeesi/pen/bwVjgK */
