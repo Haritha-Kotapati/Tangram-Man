@@ -7,4 +7,4 @@ In this project, we have created a tangram man using HTML and CSS, and we have u
 
 Standing, Walking, Running, Sitting 
 
-Check out this project at
+Check out this project at https://haritha-kotapati.github.io/Tangram-Man/
